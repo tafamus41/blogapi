@@ -9,7 +9,16 @@ const { CustomError } = require("../errors/customError");
 
 /* -------------------------------------------------------------------------- */
 const dbConnection = () => {
+    if(!process.env.MONGODB_URI){
+        throw new CustomError("mongodb_uri is neccessary")
+    }
   try {
     mongoose.connect(process.env.MONGODB_URI);
-  } catch (error) {}
+    console.log("Database connection is succesfull")
+  } catch (error) {
+    console.log("Database connection error")
+  }
 };
+
+/* -------------------------------------------------------------------------- */
+module.exports=dbConnection
