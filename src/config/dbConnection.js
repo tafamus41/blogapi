@@ -20,5 +20,24 @@ const dbConnection = () => {
   }
 };
 
-/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- *
+class DatabaseConnection {
+    constructor() {
+      this.#_connect();
+    }
+  
+    #_connect() {
+      if (!process.env?.MONGODB)
+        throw new CustomError("mongodb uri is necessary", 500);
+      mongoose
+        .connect(process.env?.MONGODB)
+        .then(() => {
+          console.log("Database connection successful");
+        })
+        .catch((err) => {
+          console.error("Database connection error");
+        });
+    }
+  }
+ /* -------------------------------------------------------------------------- */ 
 module.exports=dbConnection
