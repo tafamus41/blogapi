@@ -54,3 +54,4 @@ const BlogCategorySchema = new mongoose.Schema(
 module.exports = {
   BlogCategory: mongoose.model("BlogCategory", BlogCategorySchema),
 };
+// console.log(typeof this.BlogCategory)
