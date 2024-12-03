@@ -11,7 +11,6 @@ class CustomError extends Error {
     this.status = status;
   }
 }
-// console.log(typeof CustomError)
 class NotFoundError extends Error {
   name = "NotFoundError";
   statusCode = StatusCodes.NOT_FOUND;
