@@ -19,7 +19,9 @@ require("./src/config/dbConnection")();
 //require("./src/config/dbConnection");
 
 /* ------------------------------------------------------- */
-
+app.use("/blog/category", require("./src/routes/blogCategory.router"));
+app.use("/blog/post", require("./src/routes/blogPost.router"));
+app.use("/user", require("./src/routes/user.router"));
 app.all("/", (req, res) => {
   res.send("WELCOME TO BLOG API");
 });
