@@ -1,4 +1,5 @@
 "use strict";
+
 /* -------------------------------------------------------
     EXPRESSJS - BLOG Project with Mongoose
 ------------------------------------------------------- */
@@ -6,16 +7,17 @@
 // Call Models:
 const { BlogPost } = require("../models/blogPost.model");
 const { NotFoundError } = require("../errors/customError");
-// BlogPost Controller:
+/* ------------------------------------------------------- */
 
 module.exports.blogPost = {
   list: async (req, res) => {
     const data = await BlogPost.find().populate("categoryId");
-console.log(data)
+
     res.send({
       result: data,
     });
   },
+
   // CRUD ->
 
   create: async (req, res) => {
