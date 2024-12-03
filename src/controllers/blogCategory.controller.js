@@ -4,7 +4,7 @@
 ------------------------------------------------------- */
 const { BlogCategory } = require("../models/blogCategory.model");
 // Call Models:
-console.log(typeof this.BlogCategory)
+// console.log(typeof this.BlogCategory)
 /* ------------------------------------------------------- */
 // BlogCategory Controller:
 // "/blog/category/id"

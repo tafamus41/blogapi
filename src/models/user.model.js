@@ -32,7 +32,7 @@ const UserSchema = new mongoose.Schema(
       //! 5. yöntem
       validate: [
         function (email) {
-          console.log("this", this);
+          // console.log("this", this);
           return email.includes("@") && email.includes(".");
         },
         "Email format is incorrect",
