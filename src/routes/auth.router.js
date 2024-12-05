@@ -6,20 +6,15 @@
 const router = require("express").Router();
 
 // Call Controllers:
-const { user } = require("../controllers/user.controller");
+const { login, logout } = require("../controllers/auth.controller");
 /* ------------------------------------------------------- */
 
-// URL: /blog ->
-// /blog/post
-// /user
-router.route("/").get(user.list).post(user.create);
+// URL: /auth/login
+router.route("/login").post(login)
 
-router
-  .route("/:userId")
-  .get(user.read)
-  .put(user.update)
-  .patch(user.update)
-  .delete(user.delete);
+// URL: /auth/logout
+// router.route("/logout").get(logout)
+router.route("/logout").all(logout)
 
 module.exports = router;
 /* ------------------------------------------------------- */
