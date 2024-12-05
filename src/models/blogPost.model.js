@@ -11,6 +11,11 @@ const mongoose = require("mongoose");
 // BlogPost Schema:
 const BlogPostSchema = new mongoose.Schema(
   {
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
     categoryId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "BlogCategory",
