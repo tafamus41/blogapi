@@ -31,6 +31,10 @@ const BlogPostSchema = new mongoose.Schema(
       trim: true,
       required: true,
     },
+    published: {
+      type: Boolean,
+      default: true
+    }
     // createdAt // timestamps: true
     // updatedAt // timestamps: true
   },

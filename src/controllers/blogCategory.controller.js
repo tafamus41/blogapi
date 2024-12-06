@@ -11,9 +11,12 @@ const { NotFoundError } = require("../errors/customError");
 // BlogCategory Controller:
 // "/blog/category/id"
 module.exports.blogCategory = {
+
   list: async (req, res) => {
+
     //  const data = await BlogCategory.find({});
-    const data = await BlogCategory.find();
+    // const data = await BlogCategory.find();
+    const data = await res.getModelList(BlogCategory)
 
     res.send({
       result: data,
