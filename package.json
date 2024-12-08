@@ -1,7 +1,7 @@
 {
   "name": "blogapi",
   "version": "1.0.0",
-  "description": "**index:true**\r index: true kullanımı, MongoDB'nin ilgili alan için bir B-tree indeks oluşturmasını sağlar.\r İndeksli bir alan üzerinde yapılan sorgular, indekssiz sorgulara göre çok daha hızlı çalışır çünkü MongoDB tüm belgeleri taramak yerine indeksi kullanır.",
+  "description": "BLOG API WITH MONGOOSE",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
