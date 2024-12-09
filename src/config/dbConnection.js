@@ -1,26 +1,27 @@
 "use strict";
-
-/* -------------------------------------------------------------------------- */
-/*                    EXPRESSJS-BLOG Project with Mongoose                    */
-/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------
+    EXPRESSJS - BLOG Project with Mongoose
+------------------------------------------------------- */
 
 const mongoose = require("mongoose");
 const { CustomError } = require("../errors/customError");
 
-/* -------------------------------------------------------------------------- */
-const dbConnection = () => {
-    if(!process.env.MONGODB_URI){
-        throw new CustomError("mongodb_uri is neccessary")
-    }
+//'mongodb://localhost:27017/blogAPI'
+/*------------------------------------------------------ */
+const dbConnection = async () => {
+  if (!process.env.MONGODB_URI) {
+    throw new CustomError("mongodb_uri is necessary");
+  }
   try {
-    mongoose.connect(process.env.MONGODB_URI);
-    console.log("Database connection is succesfull")
+    await mongoose.connect(process.env.MONGODB_URI);
+    console.log("Database connection is succesfull");
   } catch (error) {
-    console.log("Database connection error")
+    console.log("Database connection error");
+    throw new CustomError("Failed to connect to the database", 500);
   }
 };
-
-/* -------------------------------------------------------------------------- *
+/*------------------------------------------------------
+//! # private, _ ile başlayan dışarıdan erişilmemeli
 class DatabaseConnection {
     constructor() {
       this.#_connect();
@@ -39,6 +40,7 @@ class DatabaseConnection {
         });
     }
   }
-    module.exports= new DatabaseConnection()
- /* -------------------------------------------------------------------------- */ 
-module.exports=dbConnection
+
+  module.exports=new DatabaseConnection()
+/*------------------------------------------------------*/
+module.exports = dbConnection;
